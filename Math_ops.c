@@ -13,8 +13,8 @@ void add_stack_nodes(stack_t **stk, unsigned int line_num)
 		more_errors(8, line_num, "add");
 
 	(*stk) = (*stk)->next;
-	sum = (*stk)->num + (*stk)->prev->num;
-	(*stk)->num = sum;
+	sum = (*stk)->n + (*stk)->prev->n;
+	(*stk)->n = sum;
 	free((*stk)->prev);
 	(*stk)->prev = NULL;
 }
@@ -35,8 +35,8 @@ void sub_stack_nodes(stack_t **stk, unsigned int line_num)
 
 
 	(*stk) = (*stk)->next;
-	sum = (*stk)->num - (*stk)->prev->num;
-	(*stk)->num = sum;
+	sum = (*stk)->n - (*stk)->prev->n;
+	(*stk)->n = sum;
 	free((*stk)->prev);
 	(*stk)->prev = NULL;
 }
@@ -53,11 +53,11 @@ void div_stack_nodes(stack_t **stk, unsigned int line_num)
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 		more_errors(8, line_num, "div");
 
-	if ((*stk)->num == 0)
+	if ((*stk)->n == 0)
 		more_errors(9, line_num);
 	(*stk) = (*stk)->next;
-	sum = (*stk)->num / (*stk)->prev->num;
-	(*stk)->num = sum;
+	sum = (*stk)->n / (*stk)->prev->n;
+	(*stk)->n = sum;
 	free((*stk)->prev);
 	(*stk)->prev = NULL;
 }
@@ -75,8 +75,8 @@ void mul_stack_nodes(stack_t **stk, unsigned int line_num)
 		more_errors(8, line_num, "mul");
 
 	(*stk) = (*stk)->next;
-	sum = (*stk)->num * (*stk)->prev->num;
-	(*stk)->num = sum;
+	sum = (*stk)->n * (*stk)->prev->n;
+	(*stk)->n = sum;
 	free((*stk)->prev);
 	(*stk)->prev = NULL;
 }
@@ -96,11 +96,11 @@ void mod_stack_nodes(stack_t **stk, unsigned int line_num)
 		more_errors(8, line_num, "mod");
 
 
-	if ((*stk)->num == 0)
+	if ((*stk)->n == 0)
 		more_errors(9, line_num);
 	(*stk) = (*stk)->next;
-	sum = (*stk)->num % (*stk)->prev->num;
-	(*stk)->num = sum;
+	sum = (*stk)->n % (*stk)->prev->n;
+	(*stk)->n = sum;
 	free((*stk)->prev);
 	(*stk)->prev = NULL;
 }

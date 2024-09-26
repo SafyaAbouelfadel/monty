@@ -12,7 +12,7 @@ void show_char(stack_t **stk, unsigned int line_num)
 	if (stk == NULL || *stk == NULL)
 		string_errors(11, line_num);
 
-	ascii_char = (*stk)->num;
+	ascii_char = (*stk)->n;
 	if (ascii_char < 0 || ascii_char > 127)
 		string_errors(10, line_num);
 	printf("%c\n", ascii_char);
@@ -37,7 +37,7 @@ void show_str(stack_t **stk, __attribute__((unused))unsigned int ln)
 	temp = *stk;
 	while (temp != NULL)
 	{
-		ascii_char = temp->num;
+		ascii_char = temp->n;
 		if (ascii_char <= 0 || ascii_char > 127)
 			break;
 		printf("%c", ascii_char);

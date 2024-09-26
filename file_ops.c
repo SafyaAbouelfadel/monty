@@ -81,7 +81,7 @@ void find_function(char *opcode, char *val, int line, int format)
 	int k;
 	int flag;
 
-	operation_t fun_list[] = {
+	instruction_t fun_list[] = {
 		{"push", add_node_stack},
 		{"pall", print_all_stack},
 		{"pint", print_top_node},

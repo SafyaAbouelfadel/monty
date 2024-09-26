@@ -28,7 +28,7 @@ void print_top_node(stack_t **stk, unsigned int line_num)
 {
 	if (stk == NULL || *stk == NULL)
 		more_errors(6, line_num);
-	printf("%d\n", (*stk)->num);
+	printf("%d\n", (*stk)->n);
 }
 
 /**
@@ -41,7 +41,6 @@ void op_nop(stack_t **stk, unsigned int line_num)
 	(void)stk;
 	(void)line_num;
 }
-
 
 /**
  * swap_stack_nodes - Swaps the top two elements of the stack.

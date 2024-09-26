@@ -14,7 +14,7 @@ stack_t *init_node(int n)
 		errors(4);
 	c_node->next = NULL;
 	c_node->prev = NULL;
-	c_node->num = n;
+	c_node->n = n;
 	return (c_node);
 }
 
@@ -77,12 +77,12 @@ void print_all_stack(stack_t **stk, unsigned int l_number)
 	stack_t *temp;
 
 	(void) l_number;
-	if (list == NULL)
+	if (stk == NULL)
 		exit(EXIT_FAILURE);
 	temp = *stk;
 	while (temp != NULL)
 	{
-		printf("%d\n", temp->num);
+		printf("%d\n", temp->n);
 		temp = temp->next;
 	}
 }
